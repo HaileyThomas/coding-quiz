@@ -17,30 +17,8 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header {
-    background-color: var(--primary-color);
-    position: sticky;
-    top: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    flex-wrap: wrap;
-}
-
-header h1 {
-    color: var(--quaternary-color);
-    font-size: 40px;
-}
-
-header h3 {
-    color: var(--quaternary-color);
-    font-size:30px;
-}
-
 main {
-    padding: 15px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,36 +26,44 @@ main {
 }
 
 #container-top {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     width: 650px;
-    padding: 5px;
+    padding: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     color: var(--quinary-color);
+}
+
+h1 {
+    color: var(--tertiary-color);
+    font-size: 35px;
+}
+
+h2 {
+    color: var(--quinary-color);
+    font-size: 24px;
 }
 
 #container {
     background-color: var(--quaternary-color);
     width: 650px;
     height: 400px;
+    border-right: 3px solid var(--primary-color);
+    border-left: 3px solid var(--primary-color);
 }
 
 #container-bottom {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 650px;
-    padding: 5px;
+    padding: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: var(--quinary-color);
-}
-
-footer {
-    background-color: var(--primary-color);
-    position: sticky;
-    bottom: 0;
-    color: var(--quaternary-color);
 }
