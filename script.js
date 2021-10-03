@@ -2,21 +2,18 @@
 var timerEl = document.getElementById('timer');
 var startBtn = document.getElementById('start-button');
 var mainBoxEl = document.querySelector('#container');
+var timeLeft = 100;
+var timeInterval;
 
 
 // FUNCTIONS
 // timer function
 function timer() {
-    // total time
-    var timeLeft = 100;
     // function for interval
-    var timeInterval = setInterval(function () {
+    timeInterval = setInterval(function () {
         timerEl.textContent = timeLeft;
         // have counter decrease
         timeLeft--;
-
-        // if (timeLeft < 15) {
-        // timerEl.style.color = "orange"; }
         // end timer
         if (timeLeft < 0) {
             clearInterval(timeInterval);
@@ -61,17 +58,23 @@ function questionOne() {
     var oneOneBtn = document.getElementById("oneOne");
     oneOneBtn.addEventListener("click", function () {
         answerOneQuestionOneEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
     // when answer two is clicked
     var oneTwoBtn = document.getElementById("oneTwo");
     oneTwoBtn.addEventListener("click", function () {
+        // remove current question
         oneContainerEl.remove();
+        // start next question
         questionTwo();
     });
     // when answer three is clicked
     var oneThreeBtn = document.getElementById("oneThree");
     oneThreeBtn.addEventListener("click", function () {
         answerThreeQuestionOneEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
 };
 
@@ -109,11 +112,15 @@ function questionTwo() {
     var twoOneBtn = document.getElementById("twoOne");
     twoOneBtn.addEventListener("click", function () {
         answerOneQuestionTwoEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
     // when answer two is clicked
     var twoTwoBtn = document.getElementById("twoTwo");
     twoTwoBtn.addEventListener("click", function () {
         answerTwoQuestionTwoEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
     // when answer three is clicked
     var twoThreeBtn = document.getElementById("twoThree");
@@ -162,11 +169,15 @@ function questionThree() {
     var threeTwoBtn = document.getElementById("threeTwo");
     threeTwoBtn.addEventListener("click", function () {
         answerTwoQuestionThreeEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
     // when answer three is clicked
     var threeThreeBtn = document.getElementById("threeThree");
     threeThreeBtn.addEventListener("click", function () {
         answerThreeQuestionThreeEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
 };
 
@@ -203,11 +214,15 @@ function questionFour() {
     var fourOneBtn = document.getElementById("fourOne");
     fourOneBtn.addEventListener("click", function () {
         answerOneQuestionFourEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
     // when answer two is clicked
     var fourTwoBtn = document.getElementById("fourTwo");
     fourTwoBtn.addEventListener("click", function () {
         answerTwoQuestionFourEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
     // when answer three is clicked
     var fourThreeBtn = document.getElementById("fourThree");
@@ -250,6 +265,8 @@ function questionFive() {
     var fiveOneBtn = document.getElementById("fiveOne");
     fiveOneBtn.addEventListener("click", function () {
         answerOneQuestionFiveEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
     // when answer two is clicked
     var fiveTwoBtn = document.getElementById("fiveTwo");
@@ -261,6 +278,8 @@ function questionFive() {
     var fiveThreeBtn = document.getElementById("fiveThree");
     fiveThreeBtn.addEventListener("click", function () {
         answerThreeQuestionFiveEl.className = "answer-button-wrong";
+        // time penalty
+        timeLeft = timeLeft - 15;
     });
 };
 
