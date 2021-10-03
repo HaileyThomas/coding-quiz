@@ -123,6 +123,18 @@ function questionTwo() {
     });
 };
 
+// question three function
+function questionThree() {
+    // create div for container
+    var threeContainerEl = document.createElement("div");
+    // create div for question
+    var questionThreeEl = document.createElement("div");
+    questionThreeEl.className = "question-box";
+    questionThreeEl.textContent = "QUESTION HERE"
+    // add all to main container
+    mainBoxEl.appendChild(threeContainerEl);
+};
+
 // Start Button Listener
 startBtn.addEventListener("click", function () {
     // start timer
