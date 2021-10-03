@@ -285,6 +285,8 @@ function questionFive() {
 
 // end quiz function
 function endQuiz() {
+    clearInterval(timeInterval);
+    console.log(timeLeft);
     // create container div
     var endQuizContainerEl = document.createElement("div");
     // create div for header/question box
