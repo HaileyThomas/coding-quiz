@@ -77,10 +77,53 @@ function questionOne() {
 
 // question two function
 function questionTwo() {
+    // create div for container
+    var twoContainerEl = document.createElement("div");
+    // create div for question
+    var questionTwoEl = document.createElement("div");
+    questionTwoEl.className = "question-box";
+    questionTwoEl.textContent = "When you pass a function into another function it is called a ...";
+    twoContainerEl.appendChild(questionTwoEl);
+    //create buttons for answers
+    // answer one
+    var answerOneQuestionTwoEl = document.createElement("button");
+    answerOneQuestionTwoEl.setAttribute("id", "twoOne");
+    answerOneQuestionTwoEl.className = "answer-button";
+    answerOneQuestionTwoEl.textContent = "Variable";
+    twoContainerEl.appendChild(answerOneQuestionTwoEl);
+    // answer two
+    var answerTwoQuestionTwoEl = document.createElement("button");
+    answerTwoQuestionTwoEl.setAttribute("id", "twoTwo");
+    answerTwoQuestionTwoEl.className = "answer-button";
+    answerTwoQuestionTwoEl.textContent = "Function Expression";
+    twoContainerEl.appendChild(answerTwoQuestionTwoEl);
+    // answer three (correct)
+    var answerThreeQuestionTwoEl = document.createElement("button");
+    answerThreeQuestionTwoEl.setAttribute("id", "twoThree");
+    answerThreeQuestionTwoEl.className = "answer-button";
+    answerThreeQuestionTwoEl.textContent = "Callback Function";
+    twoContainerEl.appendChild(answerThreeQuestionTwoEl);
+    // add all to main container
+    mainBoxEl.appendChild(twoContainerEl);
+    // when answer one is clicked
+    var twoOneBtn = document.getElementById("twoOne");
+    twoOneBtn.addEventListener("click", function () {
+        answerOneQuestionTwoEl.className = "answer-button-wrong";
+    });
+    // when answer two is clicked
+    var twoTwoBtn = document.getElementById("twoTwo");
+    twoTwoBtn.addEventListener("click", function () {
+        answerTwoQuestionTwoEl.className = "answer-button-wrong";
+    });
+    // when answer three is clicked
+    var twoThreeBtn = document.getElementById("twoThree");
+    twoThreeBtn.addEventListener("click", function () {
+        twoContainerEl.remove();
+        questionThree();
+    });
+};
 
-}
-
-// EVENT LISTENERS
+// Start Button Listener
 startBtn.addEventListener("click", function () {
     // start timer
     timer();
