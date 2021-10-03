@@ -216,6 +216,7 @@ function questionFour() {
         questionFive();
     });
 };
+
 // question five function
 function questionFive() {
     // create div for container
@@ -261,6 +262,45 @@ function questionFive() {
     fiveThreeBtn.addEventListener("click", function () {
         answerThreeQuestionFiveEl.className = "answer-button-wrong";
     });
+};
+
+// end quiz function
+function endQuiz() {
+    // create container div
+    var endQuizContainerEl = document.createElement("div");
+    // create div for header/question box
+    var endQuizHeaderBoxEl = document.createElement("div");
+    endQuizHeaderBoxEl.className = "question-box";
+    // add header
+    var endQuizHeaderEl = document.createElement("h3");
+    endQuizHeaderEl.textContent = "Quiz Finished!";
+    // add to container element
+    endQuizHeaderBoxEl.appendChild(endQuizHeaderEl);
+    endQuizContainerEl.appendChild(endQuizHeaderBoxEl);
+    // create message box
+    var endQuizMessageBoxEl = document.createElement("div");
+    endQuizMessageBoxEl.className = "welcome-box";
+    // add text
+    var endQuizMessageEl = document.createElement("p");
+    endQuizMessageEl.textContent = "The Coding Quiz is now complete! Enter your initials below and save your high score!";
+    endQuizMessageBoxEl.appendChild(endQuizMessageEl);
+    endQuizContainerEl.appendChild(endQuizMessageBoxEl);
+    // create form
+    var endQuizFormEl = document.createElement("form");
+    endQuizMessageBoxEl.appendChild(endQuizFormEl);
+    // create input field
+    var endQuizInputEl = document.createElement("input");
+    endQuizInputEl.setAttribute("type", "text");
+    endQuizInputEl.className = "input-form";
+    endQuizMessageBoxEl.appendChild(endQuizInputEl);
+    // create submit button
+    var highScoreBtnEl = document.createElement("button");
+    highScoreBtnEl.setAttribute("id", "high-score");
+    highScoreBtnEl.className = "btn";
+    highScoreBtnEl.textContent = "Submit Score";
+    endQuizMessageBoxEl.appendChild(highScoreBtnEl);
+    // add all to main container
+    mainBoxEl.appendChild(endQuizContainerEl);
 };
 
 // Start Button Listener
