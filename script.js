@@ -4,6 +4,7 @@ var startBtn = document.getElementById('start-button');
 var mainBoxEl = document.querySelector('#container');
 var timeLeft = 100;
 var timeInterval;
+var highScore;
 
 
 // FUNCTIONS
@@ -17,6 +18,7 @@ function timer() {
         // end timer
         if (timeLeft < 0) {
             clearInterval(timeInterval);
+            endQuiz();
         };
         // set speed
     }, 1000);
@@ -285,8 +287,12 @@ function questionFive() {
 
 // end quiz function
 function endQuiz() {
+    // create high score
     clearInterval(timeInterval);
     console.log(timeLeft);
+    var highScore = timeLeft + 1;
+    console.log(highScore);
+    // remove all containers
     // create container div
     var endQuizContainerEl = document.createElement("div");
     // create div for header/question box
@@ -301,6 +307,9 @@ function endQuiz() {
     // create message box
     var endQuizMessageBoxEl = document.createElement("div");
     endQuizMessageBoxEl.className = "welcome-box";
+    // show score
+    var endQuizShowHighScoreEl = document.createElement("h3");
+    // endQuizShowHighScoreEl.
     // add text
     var endQuizMessageEl = document.createElement("p");
     endQuizMessageEl.textContent = "The Coding Quiz is now complete! Enter your initials below and save your high score!";
