@@ -14,9 +14,14 @@ function timer() {
         timerEl.textContent = timeLeft;
         // have counter decrease
         timeLeft--;
-        // add if statement to end game here
-        // if (timeLeft < 0) {}
 
+        // if (timeLeft < 15) {
+        // timerEl.style.color = "orange"; }
+        // end timer
+        if (timeLeft < 0) {
+            clearInterval(timeInterval);
+        };
+        // set speed
     }, 1000);
 };
 
@@ -45,10 +50,9 @@ function questionOne() {
     answerThreeQuestionOneEl.className = "answer-button";
     answerThreeQuestionOneEl.textContent = "Data Operation Math";
     oneContainerEl.appendChild(answerThreeQuestionOneEl);
-
     // console log container
     console.log(oneContainerEl);
-
+    // add all to main container
     mainBoxEl.appendChild(oneContainerEl);
 };
 
