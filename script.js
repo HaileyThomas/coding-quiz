@@ -130,9 +130,137 @@ function questionThree() {
     // create div for question
     var questionThreeEl = document.createElement("div");
     questionThreeEl.className = "question-box";
-    questionThreeEl.textContent = "QUESTION HERE"
+    questionThreeEl.textContent = "What is a plain language description of the steps needed to create an algorithm or application?";
+    threeContainerEl.appendChild(questionThreeEl);
+    // answer one (correct)
+    var answerOneQuestionThreeEl = document.createElement("button");
+    answerOneQuestionThreeEl.setAttribute("id", "threeOne");
+    answerOneQuestionThreeEl.className = "answer-button";
+    answerOneQuestionThreeEl.textContent = "Pseudocode";
+    threeContainerEl.appendChild(answerOneQuestionThreeEl);
+    // answer two
+    var answerTwoQuestionThreeEl = document.createElement("button");
+    answerTwoQuestionThreeEl.setAttribute("id", "threeTwo");
+    answerTwoQuestionThreeEl.className = "answer-button";
+    answerTwoQuestionThreeEl.textContent = "HTML";
+    threeContainerEl.appendChild(answerTwoQuestionThreeEl);
+    // answer three
+    var answerThreeQuestionThreeEl = document.createElement("button");
+    answerThreeQuestionThreeEl.setAttribute("id", "threeThree");
+    answerThreeQuestionThreeEl.className = "answer-button";
+    answerThreeQuestionThreeEl.textContent = "DOM Tree";
+    threeContainerEl.appendChild(answerThreeQuestionThreeEl);
     // add all to main container
     mainBoxEl.appendChild(threeContainerEl);
+    // when answer one is clicked
+    var threeOneBtn = document.getElementById("threeOne");
+    threeOneBtn.addEventListener("click", function () {
+        threeContainerEl.remove();
+        questionFour();
+    });
+    // when answer two is clicked
+    var threeTwoBtn = document.getElementById("threeTwo");
+    threeTwoBtn.addEventListener("click", function () {
+        answerTwoQuestionThreeEl.className = "answer-button-wrong";
+    });
+    // when answer three is clicked
+    var threeThreeBtn = document.getElementById("threeThree");
+    threeThreeBtn.addEventListener("click", function () {
+        answerThreeQuestionThreeEl.className = "answer-button-wrong";
+    });
+};
+
+// question four function
+function questionFour() {
+    // create div for container
+    var fourContainerEl = document.createElement("div");
+    // create div for question
+    var questionFourEl = document.createElement("div");
+    questionFourEl.className = "question-box";
+    questionFourEl.textContent = "What does the 'a' in rbga() stand for?";
+    fourContainerEl.appendChild(questionFourEl);
+    // answer one
+    var answerOneQuestionFourEl = document.createElement("button");
+    answerOneQuestionFourEl.setAttribute("id", "fourOne");
+    answerOneQuestionFourEl.className = "answer-button";
+    answerOneQuestionFourEl.textContent = "Attribute";
+    fourContainerEl.appendChild(answerOneQuestionFourEl);
+    // answer two
+    var answerTwoQuestionFourEl = document.createElement("button");
+    answerTwoQuestionFourEl.setAttribute("id", "fourTwo");
+    answerTwoQuestionFourEl.className = "answer-button";
+    answerTwoQuestionFourEl.textContent = "Argument";
+    fourContainerEl.appendChild(answerTwoQuestionFourEl);
+    // answer three (correct)
+    var answerThreeQuestionFourEl = document.createElement("button");
+    answerThreeQuestionFourEl.setAttribute("id", "fourThree");
+    answerThreeQuestionFourEl.className = "answer-button";
+    answerThreeQuestionFourEl.textContent = "Alpha";
+    fourContainerEl.appendChild(answerThreeQuestionFourEl);
+    // add all to main container
+    mainBoxEl.appendChild(fourContainerEl);
+    // when answer one is clicked
+    var fourOneBtn = document.getElementById("fourOne");
+    fourOneBtn.addEventListener("click", function () {
+        answerOneQuestionFourEl.className = "answer-button-wrong";
+    });
+    // when answer two is clicked
+    var fourTwoBtn = document.getElementById("fourTwo");
+    fourTwoBtn.addEventListener("click", function () {
+        answerTwoQuestionFourEl.className = "answer-button-wrong";
+    });
+    // when answer three is clicked
+    var fourThreeBtn = document.getElementById("fourThree");
+    fourThreeBtn.addEventListener("click", function () {
+        fourContainerEl.remove();
+        questionFive();
+    });
+};
+// question five function
+function questionFive() {
+    // create div for container
+    var fiveContainerEl = document.createElement("div");
+    // create div for question
+    var questionFiveEl = document.createElement("div");
+    questionFiveEl.className = "question-box";
+    questionFiveEl.textContent = "What would you use to round down to the nearest whole number?";
+    fiveContainerEl.appendChild(questionFiveEl);
+    // answer one
+    var answerOneQuestionFiveEl = document.createElement("button");
+    answerOneQuestionFiveEl.setAttribute("id", "fiveOne");
+    answerOneQuestionFiveEl.className = "answer-button";
+    answerOneQuestionFiveEl.textContent = "math.random()";
+    fiveContainerEl.appendChild(answerOneQuestionFiveEl);
+    // answer two (correct)
+    var answerTwoQuestionFiveEl = document.createElement("button");
+    answerTwoQuestionFiveEl.setAttribute("id", "fiveTwo");
+    answerTwoQuestionFiveEl.className = "answer-button";
+    answerTwoQuestionFiveEl.textContent = "math.floor()";
+    fiveContainerEl.appendChild(answerTwoQuestionFiveEl);
+    // answer three
+    var answerThreeQuestionFiveEl = document.createElement("button");
+    answerThreeQuestionFiveEl.setAttribute("id", "fiveThree");
+    answerThreeQuestionFiveEl.className = "answer-button";
+    answerThreeQuestionFiveEl.textContent = "math.max()";
+    fiveContainerEl.appendChild(answerThreeQuestionFiveEl);
+    // add all to main container
+    mainBoxEl.appendChild(fiveContainerEl);
+    // when answer one is clicked
+    var fiveOneBtn = document.getElementById("fiveOne");
+    fiveOneBtn.addEventListener("click", function () {
+        answerOneQuestionFiveEl.className = "answer-button-wrong";
+    });
+    // when answer two is clicked
+    var fiveTwoBtn = document.getElementById("fiveTwo");
+    fiveTwoBtn.addEventListener("click", function () {
+        fiveContainerEl.remove();
+        endQuiz();
+    });
+    // when answer three is clicked
+    var fiveThreeBtn = document.getElementById("fiveThree");
+    fiveThreeBtn.addEventListener("click", function () {
+        answerThreeQuestionFiveEl.className = "answer-button-wrong";
+    });
 };
 
 // Start Button Listener
