@@ -58,8 +58,6 @@ function questionOne() {
     answerThreeQuestionOneEl.className = "answer-button";
     answerThreeQuestionOneEl.textContent = "Data Operation Math";
     oneContainerEl.appendChild(answerThreeQuestionOneEl);
-    // console log container
-    console.log(oneContainerEl);
     // add all to main container
     mainBoxEl.appendChild(oneContainerEl);
     // when answer one is clicked
@@ -302,8 +300,6 @@ function endQuiz() {
     console.log(timeLeft);
     var highScore = timeLeft + 1;
     console.log(highScore);
-    // save high score
-
     // create container div
     var endQuizContainerEl = document.createElement("div");
     // create div for header/question box
@@ -324,25 +320,36 @@ function endQuiz() {
     endQuizMessageBoxEl.appendChild(endQuizShowHighScoreEl);
     // add text
     var endQuizMessageEl = document.createElement("p");
-    endQuizMessageEl.textContent = "The Coding Quiz is now complete! Enter your initials below and save your high score!";
+    endQuizMessageEl.textContent = "The Coding Quiz is now complete! Enter your name below and save your high score!";
     endQuizMessageBoxEl.appendChild(endQuizMessageEl);
     endQuizContainerEl.appendChild(endQuizMessageBoxEl);
     // create form
     var endQuizFormEl = document.createElement("form");
+    endQuizFormEl.setAttribute("id", "name-form");
     endQuizMessageBoxEl.appendChild(endQuizFormEl);
     // create input field
     var endQuizInputEl = document.createElement("input");
+    endQuizInputEl.setAttribute("id", "name-input");
     endQuizInputEl.setAttribute("type", "text");
     endQuizInputEl.className = "input-form";
     endQuizMessageBoxEl.appendChild(endQuizInputEl);
     // create submit button
     var highScoreBtnEl = document.createElement("button");
     highScoreBtnEl.setAttribute("id", "high-score");
+    highScoreBtnEl.setAttribute("type", "submit");
     highScoreBtnEl.className = "btn";
     highScoreBtnEl.textContent = "Submit Score";
     endQuizMessageBoxEl.appendChild(highScoreBtnEl);
     // add all to main container
     mainBoxEl.appendChild(endQuizContainerEl);
+    // function that runs when form submitted
+    function submitScore() {
+        localStorage.setItem("score", highScore);
+        var nameInput = document.getElementById("name-input");
+        localStorage.setItem("name", JSON.stringify(nameInput));
+    };
+    // event listener for submit button
+    highScoreBtnEl.addEventListener("submit", submitScore);
 };
 
 // Start Button Listener
