@@ -342,14 +342,20 @@ function endQuiz() {
     endQuizMessageBoxEl.appendChild(highScoreBtnEl);
     // add all to main container
     mainBoxEl.appendChild(endQuizContainerEl);
+    // add input and submit to form
+    endQuizFormEl.appendChild(endQuizInputEl);
+    endQuizFormEl.appendChild(highScoreBtnEl);
+    console.log(endQuizContainerEl);
     // function that runs when form submitted
-    function submitScore() {
-        localStorage.setItem("score", highScore);
+    function submitScore(event) {
+        event.preventDefault();
         var nameInput = document.getElementById("name-input");
-        localStorage.setItem("name", JSON.stringify(nameInput));
+        localStorage.setItem("score", highScore);
+        localStorage.setItem("name", nameInput.value);
+        console.log(nameInput);
     };
     // event listener for submit button
-    highScoreBtnEl.addEventListener("submit", submitScore);
+    endQuizFormEl.addEventListener("submit", submitScore);
 };
 
 // Start Button Listener
