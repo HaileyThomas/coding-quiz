@@ -348,14 +348,33 @@ function endQuiz() {
     console.log(endQuizContainerEl);
     // function that runs when form submitted
     function submitScore(event) {
+        // prevent reloading page on submission
         event.preventDefault();
+        // give name to name input
         var nameInput = document.getElementById("name-input");
+        // add score to local storage
         localStorage.setItem("score", highScore);
+        // add name to local storage
         localStorage.setItem("name", nameInput.value);
-        console.log(nameInput);
+        // remove container
+        endQuizContainerEl.remove();
+        viewHighScores();
     };
     // event listener for submit button
     endQuizFormEl.addEventListener("submit", submitScore);
+};
+
+function viewHighScores() {
+    // create div container
+    var viewHighScoresEl = document.createElement("div");
+    viewHighScoresEl.setAttribute("id", "view-scores-container");
+    // creat div for header
+    var viewHighScoresHeaderEl = document.createElement("div");
+    viewHighScoresHeaderEl.className = "question-box";
+    viewHighScoresHeaderEl.textContent = "View High Scores";
+    viewHighScoresEl.appendChild(viewHighScoresHeaderEl);
+    // add all to main container
+    mainBoxEl.appendChild(viewHighScoresEl);
 };
 
 // Start Button Listener
