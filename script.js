@@ -5,6 +5,11 @@ var mainBoxEl = document.querySelector('#container');
 var timeLeft = 100;
 var timeInterval;
 var highScore;
+var oneContainerEl;
+var twoContainerEl;
+var threeContainerEl;
+var fourContainerEl;
+var fiveContainerEl;
 
 
 // FUNCTIONS
@@ -27,7 +32,8 @@ function timer() {
 // question one function
 function questionOne() {
     // create div for container
-    var oneContainerEl = document.createElement("div");
+    oneContainerEl = document.createElement("div");
+    oneContainerEl.setAttribute("id", "container-one");
     // create div for question
     var questionOneEl = document.createElement("div");
     questionOneEl.className = "question-box";
@@ -83,7 +89,8 @@ function questionOne() {
 // question two function
 function questionTwo() {
     // create div for container
-    var twoContainerEl = document.createElement("div");
+    twoContainerEl = document.createElement("div");
+    twoContainerEl.setAttribute("id", "container-two");
     // create div for question
     var questionTwoEl = document.createElement("div");
     questionTwoEl.className = "question-box";
@@ -135,7 +142,8 @@ function questionTwo() {
 // question three function
 function questionThree() {
     // create div for container
-    var threeContainerEl = document.createElement("div");
+    threeContainerEl = document.createElement("div");
+    threeContainerEl.setAttribute("id", "container-three");
     // create div for question
     var questionThreeEl = document.createElement("div");
     questionThreeEl.className = "question-box";
@@ -186,7 +194,8 @@ function questionThree() {
 // question four function
 function questionFour() {
     // create div for container
-    var fourContainerEl = document.createElement("div");
+    fourContainerEl = document.createElement("div");
+    fourContainerEl.setAttribute("id", "container-four");
     // create div for question
     var questionFourEl = document.createElement("div");
     questionFourEl.className = "question-box";
@@ -237,7 +246,8 @@ function questionFour() {
 // question five function
 function questionFive() {
     // create div for container
-    var fiveContainerEl = document.createElement("div");
+    fiveContainerEl = document.createElement("div");
+    fiveContainerEl.setAttribute("id", "container-five");
     // create div for question
     var questionFiveEl = document.createElement("div");
     questionFiveEl.className = "question-box";
@@ -287,12 +297,13 @@ function questionFive() {
 
 // end quiz function
 function endQuiz() {
-    // create high score
+    // stop timer
     clearInterval(timeInterval);
     console.log(timeLeft);
     var highScore = timeLeft + 1;
     console.log(highScore);
-    // remove all containers
+    // save high score
+
     // create container div
     var endQuizContainerEl = document.createElement("div");
     // create div for header/question box
@@ -309,7 +320,8 @@ function endQuiz() {
     endQuizMessageBoxEl.className = "welcome-box";
     // show score
     var endQuizShowHighScoreEl = document.createElement("h3");
-    // endQuizShowHighScoreEl.
+    endQuizShowHighScoreEl.textContent = "Your score is: " + highScore;
+    endQuizMessageBoxEl.appendChild(endQuizShowHighScoreEl);
     // add text
     var endQuizMessageEl = document.createElement("p");
     endQuizMessageEl.textContent = "The Coding Quiz is now complete! Enter your initials below and save your high score!";
