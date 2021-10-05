@@ -6,6 +6,8 @@ var highScoresLinkEl = document.getElementById('high-scores-link');
 var welcomeBox = document.getElementById("welcome");
 var timeLeft = 100;
 var timeInterval;
+var getScore = localStorage.getItem("score");
+var getName = localStorage.getItem("name");
 var highScore;
 var oneContainerEl;
 var twoContainerEl;
@@ -354,10 +356,16 @@ function endQuiz() {
         event.preventDefault();
         // give name to name input
         var nameInput = document.getElementById("name-input");
-        // add score to local storage
+        // add to global variable
         localStorage.setItem("score", highScore);
-        // add name to local storage
+        // add to global variable
         localStorage.setItem("name", nameInput.value);
+        // push to array
+        //scoreArray.push(getScore);
+        //scoreArray.push(getName);
+        //localStorage.setItem("array", scoreArray);
+        //console.log(scoreArray);
+        //console.log(storedScores);
         // remove container
         endQuizContainerEl.remove();
         viewHighScores();
@@ -368,15 +376,27 @@ function endQuiz() {
 
 function viewHighScores() {
     // create div container
-    var viewHighScoresEl = document.createElement("div");
-    viewHighScoresEl.setAttribute("id", "view-scores-container");
-    // creat div for header
+    var viewHighScoresContainerEl = document.createElement("div");
+    viewHighScoresContainerEl.setAttribute("id", "scores-container");
+    // create div for header
     var viewHighScoresHeaderEl = document.createElement("div");
     viewHighScoresHeaderEl.className = "question-box";
     viewHighScoresHeaderEl.textContent = "View High Scores";
-    viewHighScoresEl.appendChild(viewHighScoresHeaderEl);
+    viewHighScoresContainerEl.appendChild(viewHighScoresHeaderEl);
+    // create main div
+    var viewHighScoresEl = document.createElement("div");
+    viewHighScoresEl.setAttribute("id", "view-high-scores");
+    viewHighScoresEl.className = "welcome-box";
+    viewHighScoresContainerEl.appendChild(viewHighScoresEl);
+    // add text area
+    var viewHighScoresTextEl = document.createElement("p");
+    viewHighScoresTextEl.setAttribute("id", "scores-text");
+    viewHighScoresTextEl.textContent = "Name: " + getName + "  |  " + " Score: " + getScore;
+    // viewHighScoresTextEl.textContent = storedScores;
+    viewHighScoresEl.appendChild(viewHighScoresTextEl);
     // add all to main container
-    mainBoxEl.appendChild(viewHighScoresEl);
+    mainBoxEl.appendChild(viewHighScoresContainerEl);
+    //
 };
 
 // Start Button Listener
