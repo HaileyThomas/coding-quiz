@@ -360,12 +360,6 @@ function endQuiz() {
         localStorage.setItem("score", highScore);
         // add to global variable
         localStorage.setItem("name", nameInput.value);
-        // push to array
-        //scoreArray.push(getScore);
-        //scoreArray.push(getName);
-        //localStorage.setItem("array", scoreArray);
-        //console.log(scoreArray);
-        //console.log(storedScores);
         // remove container
         endQuizContainerEl.remove();
         viewHighScores();
