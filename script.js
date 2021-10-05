@@ -2,6 +2,8 @@
 var timerEl = document.getElementById('timer');
 var startBtn = document.getElementById('start-button');
 var mainBoxEl = document.querySelector('#container');
+var highScoresLinkEl = document.getElementById('high-scores-link');
+var welcomeBox = document.getElementById("welcome");
 var timeLeft = 100;
 var timeInterval;
 var highScore;
@@ -381,9 +383,16 @@ function viewHighScores() {
 startBtn.addEventListener("click", function () {
     // start timer
     timer();
-    // name welcome box and remove
-    var welcomeBox = document.getElementById("welcome");
+    // remove welcome box
     welcomeBox.remove();
     // start question 1
     questionOne();
+});
+
+// View High Scores Listener
+highScoresLinkEl.addEventListener("click", function () {
+    // remove welcome box
+    welcomeBox.remove();
+    // start view high scores function
+    viewHighScores();
 });

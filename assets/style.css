@@ -145,6 +145,15 @@ h2 {
     color: var(--quinary-color);
 }
 
+#container-bottom a {
+    color: var(--quinary-color);
+    text-decoration: none;
+}
+
+#container-bottom a:hover {
+    color: var(--tertiary-color);
+}
+
 .input-form {
     background-color: white;
     border: 3px solid var(--primary-color);
