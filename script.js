@@ -6,9 +6,9 @@ var highScoresLinkEl = document.getElementById('high-scores-link');
 var welcomeBox = document.getElementById("welcome");
 var timeLeft = 100;
 var timeInterval;
+var highScore;
 var getScore = localStorage.getItem("score");
 var getName = localStorage.getItem("name");
-var highScore;
 var oneContainerEl;
 var twoContainerEl;
 var threeContainerEl;
@@ -350,8 +350,7 @@ function endQuiz() {
     // stop timer
     clearInterval(timeInterval);
     console.log(timeLeft);
-    var highScore = timeLeft + 1;
-    console.log(highScore);
+    highScore = timeLeft + 1;
     // check for other divs
     checkBox();
     // create container div
@@ -451,12 +450,4 @@ startBtn.addEventListener("click", function () {
     welcomeBox.remove();
     // start question 1
     questionOne();
-});
-
-// View High Scores Listener
-highScoresLinkEl.addEventListener("click", function () {
-    // remove welcome box
-    welcomeBox.remove();
-    // start view high scores function
-    viewHighScores();
 });
