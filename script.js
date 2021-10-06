@@ -30,7 +30,7 @@ function timer() {
             endQuiz();
         };
         // set speed
-    }, 100);
+    }, 1000);
 };
 
 // question one function
@@ -313,11 +313,37 @@ function checkBox() {
     if (oneContainerEl.matches(".div-class")) {
         // give name to state of element
         var state1 = oneContainerEl.getAttribute("data-state");
+        // check to see if it is visible on the page
         if (state1 === "visible") {
+            // remove div
             oneContainerEl.remove();
         }
-    }
-}
+    };
+    if (twoContainerEl.matches(".div-class")) {
+        var state2 = twoContainerEl.getAttribute("data-state");
+        if (state2 === "visible") {
+            twoContainerEl.remove();
+        }
+    };
+    if (threeContainerEl.matches(".div-class")) {
+        var state3 = threeContainerEl.getAttribute("data-state");
+        if (state3 === "visible") {
+            threeContainerEl.remove();
+        }
+    };
+    if (fourContainerEl.matches(".div-class")) {
+        var state4 = fourContainerEl.getAttribute("data-state");
+        if (state4 === "visible") {
+            fourContainerEl.remove();
+        }
+    };
+    if (fiveContainerEl.matches(".div-class")) {
+        var state5 = fiveContainerEl.getAttribute("data-state");
+        if (state5 === "visible") {
+            fiveContainerEl.remove();
+        }
+    };
+};
 
 // end quiz function
 function endQuiz() {
