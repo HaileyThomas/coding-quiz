@@ -30,14 +30,16 @@ function timer() {
             endQuiz();
         };
         // set speed
-    }, 1000);
+    }, 100);
 };
 
 // question one function
 function questionOne() {
     // create div for container
     oneContainerEl = document.createElement("div");
+    oneContainerEl.className = "div-class";
     oneContainerEl.setAttribute("id", "container-one");
+    oneContainerEl.setAttribute("data-state", "visible");
     // create div for question
     var questionOneEl = document.createElement("div");
     questionOneEl.className = "question-box";
@@ -92,7 +94,9 @@ function questionOne() {
 function questionTwo() {
     // create div for container
     twoContainerEl = document.createElement("div");
+    twoContainerEl.className = "div-class";
     twoContainerEl.setAttribute("id", "container-two");
+    twoContainerEl.setAttribute("data-state", "visible");
     // create div for question
     var questionTwoEl = document.createElement("div");
     questionTwoEl.className = "question-box";
@@ -145,7 +149,9 @@ function questionTwo() {
 function questionThree() {
     // create div for container
     threeContainerEl = document.createElement("div");
+    threeContainerEl.className = "div-class";
     threeContainerEl.setAttribute("id", "container-three");
+    threeContainerEl.setAttribute("data-state", "visible");
     // create div for question
     var questionThreeEl = document.createElement("div");
     questionThreeEl.className = "question-box";
@@ -197,7 +203,9 @@ function questionThree() {
 function questionFour() {
     // create div for container
     fourContainerEl = document.createElement("div");
+    fourContainerEl.className = "div-class";
     fourContainerEl.setAttribute("id", "container-four");
+    fourContainerEl.setAttribute("data-state", "visible");
     // create div for question
     var questionFourEl = document.createElement("div");
     questionFourEl.className = "question-box";
@@ -250,6 +258,8 @@ function questionFive() {
     // create div for container
     fiveContainerEl = document.createElement("div");
     fiveContainerEl.setAttribute("id", "container-five");
+    fiveContainerEl.className = "div-class";
+    fiveContainerEl.setAttribute("data-state", "visible");
     // create div for question
     var questionFiveEl = document.createElement("div");
     questionFiveEl.className = "question-box";
@@ -297,6 +307,18 @@ function questionFive() {
     });
 };
 
+// function to check if any windows are up
+function checkBox() {
+    // if the element matches the class
+    if (oneContainerEl.matches(".div-class")) {
+        // give name to state of element
+        var state1 = oneContainerEl.getAttribute("data-state");
+        if (state1 === "visible") {
+            oneContainerEl.remove();
+        }
+    }
+}
+
 // end quiz function
 function endQuiz() {
     // stop timer
@@ -304,6 +326,8 @@ function endQuiz() {
     console.log(timeLeft);
     var highScore = timeLeft + 1;
     console.log(highScore);
+    // check for other divs
+    checkBox();
     // create container div
     var endQuizContainerEl = document.createElement("div");
     // create div for header/question box
