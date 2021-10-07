@@ -9,6 +9,9 @@ var timeInterval;
 var highScore;
 var getScore = localStorage.getItem("score");
 var getName = localStorage.getItem("name");
+var listHighScores = JSON.parse(localStorage.getItem('listScores')) || [];
+var score;
+var maxHighScore = 5;
 var oneContainerEl;
 var twoContainerEl;
 var threeContainerEl;
@@ -405,10 +408,24 @@ function endQuiz() {
         event.preventDefault();
         // give name to name input
         var nameInput = document.getElementById("name-input");
-        // add to global variable
+        // add to local storage
         localStorage.setItem("score", highScore);
-        // add to global variable
+        // add to local storage
         localStorage.setItem("name", nameInput.value);
+        // create combined score variable
+        score = {
+            name: nameInput.value,
+            score: highScore
+        };
+        console.log(score);
+        // push to array
+        listHighScores.push(score);
+        // sort array by score
+        listHighScores.sort((a, b) => b.score - a.score);
+        // only allow 5 scores
+        listHighScores.splice(5);
+        // store to local storage
+        localStorage.setItem("listScores", JSON.stringify(listHighScores));
         // remove container
         endQuizContainerEl.remove();
         viewHighScores();
@@ -416,6 +433,7 @@ function endQuiz() {
     // event listener for submit button
     endQuizFormEl.addEventListener("submit", submitScore);
 };
+console.log(listHighScores);
 
 function viewHighScores() {
     // create div container
@@ -431,12 +449,16 @@ function viewHighScores() {
     viewHighScoresEl.setAttribute("id", "view-high-scores");
     viewHighScoresEl.className = "welcome-box";
     viewHighScoresContainerEl.appendChild(viewHighScoresEl);
-    // add text area
-    var viewHighScoresTextEl = document.createElement("p");
-    viewHighScoresTextEl.setAttribute("id", "scores-text");
-    viewHighScoresTextEl.textContent = "Name: " + getName + "  |  " + " Score: " + getScore;
-    // viewHighScoresTextEl.textContent = storedScores;
-    viewHighScoresEl.appendChild(viewHighScoresTextEl);
+    // add list
+    var viewHighScoresListEl = document.createElement("ul")
+    viewHighScoresListEl.setAttribute("id", "high-scores-list");
+    viewHighScoresEl.appendChild(viewHighScoresListEl);
+    // get high scores list
+    listHighScores.forEach((item) => {
+        var li = document.createElement("li");
+        li.innerHTML = item;
+        viewHighScoresListEl.appendChild(li);
+    });
     // add all to main container
     mainBoxEl.appendChild(viewHighScoresContainerEl);
     //
