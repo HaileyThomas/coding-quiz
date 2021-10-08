@@ -452,12 +452,13 @@ function viewHighScores() {
     // add list
     var viewHighScoresListEl = document.createElement("ul")
     viewHighScoresListEl.setAttribute("id", "high-scores-list");
+    viewHighScoresListEl.className = "scores-list";
     viewHighScoresEl.appendChild(viewHighScoresListEl);
     // get high scores list
     listHighScores.forEach((item) => {
         console.log(item);
         var li = document.createElement("li");
-        li.innerHTML = item.name + " " + item.score;
+        li.innerHTML = "<b>Name:</b> " + item.name + "  |  " + "<b>Score:</b> " + item.score;
         viewHighScoresListEl.appendChild(li);
     });
     // add all to main container
