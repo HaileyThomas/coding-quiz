@@ -9,7 +9,7 @@ var timeInterval;
 var highScore;
 var getScore = localStorage.getItem("score");
 var getName = localStorage.getItem("name");
-var listHighScores = JSON.parse(localStorage.getItem('listScores')) || [];
+var listHighScores = JSON.parse(window.localStorage.getItem('listScores')) || [];
 var score;
 var maxHighScore = 5;
 var oneContainerEl;
@@ -455,8 +455,9 @@ function viewHighScores() {
     viewHighScoresEl.appendChild(viewHighScoresListEl);
     // get high scores list
     listHighScores.forEach((item) => {
+        console.log(item);
         var li = document.createElement("li");
-        li.innerHTML = item;
+        li.innerHTML = item.name + " " + item.score;
         viewHighScoresListEl.appendChild(li);
     });
     // add all to main container
