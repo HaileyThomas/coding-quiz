@@ -16,10 +16,10 @@
 ![screenShotTwo](./assets/images/screenshot2.png)
 ![screenShotThree](./assets/images/screenshot3.png)
 ### Links
-[GitHubLink](https://github.com/HaileyThomas/coding-quiz) link to deploy website
-[GitHubProfile](https://haileythomas.github.io/coding-quiz) link to my GitHub profile
+- [GitHubLink](https://github.com/HaileyThomas/coding-quiz) link to deploy website
+- [GitHubProfile](https://haileythomas.github.io/coding-quiz) link to my GitHub profile
 ## Credits
-[YouTubeTutorial](https://www.youtube.com/watch?v=jfOv18lCMmw&t=251s) followed beginning of this tutorial to help me display the scores to the high score page.
+- [YouTubeTutorial](https://www.youtube.com/watch?v=jfOv18lCMmw&t=251s) followed beginning of this tutorial to help me display the scores to the high score page.
 ## License
 MIT License
 
